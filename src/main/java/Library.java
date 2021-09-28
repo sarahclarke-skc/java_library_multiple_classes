@@ -6,7 +6,7 @@ public class Library {
     private ArrayList<Book> books;
 
     public Library() {
-        this.capacity = 1000;
+        this.capacity = 5;
         this.books = new ArrayList<>();
     }
 
@@ -17,4 +17,16 @@ public class Library {
     public int getNumberOfBooks() {
         return this.books.size();
     }
+
+    public void addBook(Book book) {
+        this.books.add(book);
+    }
+
+    public void addBookIfThereIsCapacity(Book book) {
+        if (this.capacity > this.getNumberOfBooks()) {
+            this.addBook(book);
+        }
+    }
+
+
 }
