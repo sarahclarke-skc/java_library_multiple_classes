@@ -31,17 +31,6 @@ public class LibraryTest {
         assertEquals(2, library.getNumberOfBooks());
     }
 
-//    @Test
-//    public void checkLibraryDoesNotHaveCapacityBeforeAddingBook() {
-//        library.addBook(book);
-//        library.addBook(book);
-//        library.addBook(book);
-//        library.addBook(book);
-//        library.addBook(book);
-//        library.addBook(book);
-//        assertEquals(false, library.checkLibraryHasCapacity());
-//}
-
     @Test
     public void libraryHasCapacityBeforeAdding() {
         library.addBookIfThereIsCapacity(book);
@@ -61,5 +50,15 @@ public class LibraryTest {
         library.addBookIfThereIsCapacity(book);
         assertEquals(5, library.getNumberOfBooks());
     }
+
+    @Test
+    public void canLendBook(){
+        library.addBookIfThereIsCapacity(book);
+        library.addBookIfThereIsCapacity(book);
+        library.lendBook(book);
+        assertEquals(1, library.getNumberOfBooks());
+    }
+
+
 }
 

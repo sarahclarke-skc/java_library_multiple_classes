@@ -28,5 +28,9 @@ public class Library {
         }
     }
 
+    public void lendBook(Book book) {
+        this.books.remove(0);
+    }
+
 
 }
