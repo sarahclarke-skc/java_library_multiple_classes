@@ -19,18 +19,29 @@ public class Library {
     }
 
     public void addBook(Book book) {
+        if (this.capacity > this.getNumberOfBooks())
         this.books.add(book);
     }
 
-    public void addBookIfThereIsCapacity(Book book) {
-        if (this.capacity > this.getNumberOfBooks()) {
-            this.addBook(book);
+//    public void addBookIfThereIsCapacity(Book book) {
+//        if (this.capacity > this.getNumberOfBooks()) {
+//            this.addBook(book);
+//        }
+//    }
+
+    public Book removeBook() {
+        return this.books.remove(0);
+    }
+
+    public void lendBook(Borrower borrower) {
+        if (borrower.canBorrow()) {
+            Book book = this.removeBook();
+            borrower.addBookToCollection(book);
         }
     }
 
-    public void lendBook(Book book) {
-        this.books.remove(0);
-    }
-
+//        this.books.remove(0);
+//        Book borrowedBook = borrower.canBorrow();
+//    }
 
 }
